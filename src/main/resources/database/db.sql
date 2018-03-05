@@ -21,13 +21,13 @@ CREATE TABLE `roles` (
 ) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8;
 
 CREATE TABLE `user_roles` (
-  `id` int(11) NOT NULL,
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `user_id` int(11) NOT NULL,
   `role_id` int(11) NOT NULL,
   CONSTRAINT `user_roles_primary_key` PRIMARY KEY (`id`),
   CONSTRAINT `user_roles_foreign_key_1` FOREIGN KEY (`user_id`) REFERENCES `users` (`user_id`),
   CONSTRAINT `user_roles_foreign_key_2` FOREIGN KEY (`role_id`) REFERENCES `roles` (`role_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8;
 
 INSERT INTO roles (`role`) values ('ADMIN');
 INSERT INTO roles (`role`) values ('USER');
@@ -35,3 +35,5 @@ INSERT INTO roles (`role`) values ('USER');
 INSERT INTO user_roles (`user_id`,`role_id`) VALUES ('1','1');
 INSERT INTO user_roles (`user_id`,`role_id`) VALUES ('1','2');
 INSERT INTO user_roles (`user_id`,`role_id`) VALUES ('2','2');
+
+INSERT INTO `users` (`user_id`, `password`, `email`, `user_name`, `name`, `last_name`, `active`) VALUES (1, '$2a$06$OAPObzhRdRXBCbk7Hj/ot.jY3zPwR8n7/mfLtKIgTzdJa4.6TwsIm', 'user@mail.com', 'user', 'Name', 'Surname', 1);
