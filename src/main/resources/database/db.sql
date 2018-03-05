@@ -32,8 +32,11 @@ CREATE TABLE `user_roles` (
 INSERT INTO roles (`role`) values ('ADMIN');
 INSERT INTO roles (`role`) values ('USER');
 
+INSERT INTO `users` (`user_id`, `password`, `email`, `user_name`, `name`, `last_name`, `active`)
+VALUES (1, '$2a$06$OAPObzhRdRXBCbk7Hj/ot.jY3zPwR8n7/mfLtKIgTzdJa4.6TwsIm', 'user@mail.com', 'user', 'Name', 'Surname', 1);
+INSERT INTO `users` (`user_id`, `password`, `email`, `user_name`, `name`, `last_name`, `active`)
+VALUES (2, '$2a$06$OAPObzhRdRXBCbk7Hj/ot.jY3zPwR8n7/mfLtKIgTzdJa4.6TwsIm', 'johndoe@gmail.com', 'johndoe', 'John', 'Doe', 1);
+
 INSERT INTO user_roles (`user_id`,`role_id`) VALUES ('1','1');
 INSERT INTO user_roles (`user_id`,`role_id`) VALUES ('1','2');
 INSERT INTO user_roles (`user_id`,`role_id`) VALUES ('2','2');
-
-INSERT INTO `users` (`user_id`, `password`, `email`, `user_name`, `name`, `last_name`, `active`) VALUES (1, '$2a$06$OAPObzhRdRXBCbk7Hj/ot.jY3zPwR8n7/mfLtKIgTzdJa4.6TwsIm', 'user@mail.com', 'user', 'Name', 'Surname', 1);
